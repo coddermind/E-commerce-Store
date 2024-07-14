@@ -1,0 +1,742 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title Tag  -->
+    <title>Iconic Store</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+	<!-- Web Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css' %}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{% static 'css/niceselect.css' %}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/flex-slider.min.css' %}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+	<!-- rating styling -->
+	<style>
+		.star-rating {
+			direction: rtl;
+			display: inline-flex;
+		}
+		.star-rating input[type="radio"] {
+			display: none;
+		}
+		.star-rating label {
+			font-size: 2rem;
+			color: #ddd;
+			cursor: pointer;
+		}
+		.star-rating input[type="radio"]:checked ~ label {
+			color: #f5c518;
+		}
+		.star-rating label:hover,
+		.star-rating label:hover ~ label {
+			color: #f5c518;
+		}
+	</style>
+
+	<!-- Color CSS -->
+	<link rel="stylesheet" href="{% static 'css/color/color1.css' %}">
+	<!--<link rel="stylesheet" href="{% static 'css/color/color2.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color3.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color4.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color5.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color6.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color7.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color8.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color9.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color10.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color11.css' %}">-->
+	<!--<link rel="stylesheet" href="{% static 'css/color/color12.css' %}">-->
+
+	<link rel="stylesheet" href="#" id="colors">
+	
+</head>
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+	
+	<!-- Eshop Color Plate -->
+	<div class="color-plate ">
+		<a class="color-plate-icon"><i class="ti-paint-bucket"></i></a>
+		<h4>Colors</h4>
+		<p>Select the color scheme.</p>
+		<span class="color1"></span>
+		<span class="color2"></span>
+		<span class="color3"></span>
+		<span class="color4"></span>
+		<span class="color5"></span>
+		<span class="color6"></span>
+		<span class="color7"></span>
+		<span class="color8"></span>
+		<span class="color9"></span>
+		<span class="color10"></span>
+		<span class="color11"></span>
+		<span class="color12"></span>
+	</div>
+	<!-- /End Color Plate -->
+		
+	<!-- Header -->
+	<header class="header shop">
+		<!-- Topbar -->
+		<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-12 col-12">
+						<!-- Top Left -->
+						<div class="top-left">
+							<ul class="list-main">
+								<li><i class="ti-headphone-alt"></i> <a href="tel:+923704651911" target="_blank">+92 370 4651911</a></li>
+								<li><i class="ti-email"></i> <a href="mailto:iconicsj.01@gmail.com" target="_blank">iconicsj.01@gmail.com</a></li>
+							</ul>
+						</div>
+						<!--/ End Top Left -->
+					</div>
+					<div class="col-lg-7 col-md-12 col-12">
+						<!-- Top Right -->
+						<div class="right-content">
+							<ul class="list-main">
+								<li><i class="ti-location-pin"></i> Store location</li>
+								<li><i class="ti-user"></i> <a href="#">My account</a></li>
+                {% if request.user.is_authenticated %}
+                <li><i class="ti-power-off"></i><a href="{% url 'logout_user' %}">Logout</a></li>
+                {% else %}
+								<li><i class="ti-power-off"></i><a href="{% url 'login_user' %}">Login</a></li>
+                {% endif %}
+							</ul>
+						</div>
+						<!-- End Top Right -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Topbar -->
+		<div class="middle-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-12">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="{% url 'index' %}"><h3>Iconic Store</h3></a>
+						</div>
+						<!--/ End Logo -->
+						<!-- Search Form -->
+						<div class="search-top">
+							<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+							<!-- Search Form -->
+							<div class="search-top">
+								<form class="search-form" method="POST">
+									<input type="text" placeholder="Search here..." name="item_name">
+									<button value="item_name" type="submit"><i class="ti-search"></i></button>
+								</form>
+								<form action="{% url 'index' %}" id="categoryForm" method="get">
+									<select id="category" name="category" onchange="submitForm()">
+										<option selected="selected" value="all">All Category</option>
+										{% for cat in category_list %}
+											<option value="{{cat}}">{{cat}}</option>
+										{% endfor %}
+									</select>
+								</form>
+							</div>
+							<!--/ End Search Form -->
+						</div>
+						<!--/ End Search Form -->
+						<div class="mobile-nav"></div>
+					</div>
+					<div class="col-lg-8 col-md-7 col-12">
+						<div class="search-bar-top">
+							<div class="search-bar">
+                <form action="{% url 'index' %}" id="categoryForm" method="get">
+								<select id="category" name="category" onchange="submitForm()">
+									<option selected="selected" value="all">All Category</option>
+                  {% for cat in category_list %}
+                    <option value="{{cat}}">{{cat}}</option>
+                  {% endfor %}
+								</select>
+                </form>
+								<form method="POST">
+									<input name="item_name" placeholder="Search Products Here....." type="search">
+									<button class="btnn" type="submit"><i class="ti-search"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-12">
+						<div class="right-bar">
+							<!-- Search Form -->
+							<div class="sinlge-bar">
+								<a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+							</div>
+							<div class="sinlge-bar">
+								<a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+							</div>
+							<div class="sinlge-bar shopping">
+								<a href="{% url 'cart' %}" class="single-icon"><i class="ti-bag"></i> {% if count_products %} <span class="total-count">{{count_products}}</span> {% endif %}</a>
+								<!-- Shopping Item -->
+								<div class="shopping-item">
+									<div class="dropdown-cart-header">
+										<span>{{count_products}} Items</span>
+										<a href="{% url 'cart' %}">View Cart</a>
+									</div>
+									<ul class="shopping-list">
+                    {% for id, qty, price in cart_products %}
+                    {% for product in all_products %}
+                    {% if product.id == id %}
+										<li>
+											<a href="{% url 'remove_from_cart' id=product.id %}" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
+											<a class="cart-img" href="{% url 'details' id=product.id %}"><img src="{{product.image_1.url}}" alt="#"></a>
+											<h4><a href="{% url 'details' id=product.id %}">{{product.name}}</a></h4>
+											<p class="quantity">{{qty}}x - <span class="amount">Rs.{{price}}.00</span></p>
+										</li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+									</ul>
+									<div class="bottom">
+										<div class="total">
+											<span>Total</span>
+											<span class="total-amount">Rs.{{gross_total}}.00</span>
+										</div>
+										<a href="{% url 'cart' %}" class="btn animate">Cart</a>
+									</div>
+								</div>
+								<!--/ End Shopping Item -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="cat-nav-head">
+					<div class="row">
+						
+						<div class="col-lg-9 col-12">
+							<div class="menu-area">
+								<!-- Main Menu -->
+								<nav class="navbar navbar-expand-lg">
+									<div class="navbar-collapse">	
+										<div class="nav-inner">	
+											<ul class="nav main-menu menu navbar-nav">
+												<li class="active"><a href="{% url 'index' %}">Home</a>
+												</li>
+												{% if request.user.is_authenticated %}
+                                                <li><a href="{% url 'logout_user' %}">Logout</a></li>
+												<li><a href="{% url 'all_prev_orders' %}">Previous Orders</a></li>
+                                                {% else %}
+												<li><a href="{% url 'login_user' %}">Login</a></li>
+												<li><a href="{% url 'register_user' %}">Register</a></li>
+                                                {% endif %}
+                                                <li><a href="{% url 'about' %}">About Us</a></li>									
+											</ul>
+										</div>
+									</div>
+								</nav>
+								<!--/ End Main Menu -->	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!--/ End Header -->
+	
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="bread-inner">
+							<ul class="bread-list">
+								<li><a href="{% url 'index' %}">Home<i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="{% url 'details' id=product.id %}">Shop Details</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+				
+		<!-- Shop Single -->
+		<section class="shop single section">
+					<div class="container">
+						<div class="row"> 
+							<div class="col-12">
+								<div class="row">
+									<div class="col-lg-6 col-12">
+										<!-- Product Slider -->
+										<div class="product-gallery">
+											<!-- Images slider -->
+											<div class="flexslider-thumbnails">
+												<ul class="slides">
+													{% if product.image_1 %}
+													<li data-thumb="{{product.image_1.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_1.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_2 %}
+													<li data-thumb="{{product.image_2.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_2.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_3 %}
+													<li data-thumb="{{product.image_3.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_3.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_4 %}
+													<li data-thumb="{{product.image_4.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_4.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_5 %}
+													<li data-thumb="{{product.image_5.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_5.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_6 %}
+													<li data-thumb="{{product.image_6.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_6.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_7 %}
+													<li data-thumb="{{product.image_7.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_7.url}}" alt="#">
+													</li>
+													{% endif %}
+													{% if product.image_8 %}
+													<li data-thumb="{{product.image_8.url}}" rel="adjustX:10, adjustY:">
+														<img src="{{product.image_8.url}}" alt="#">
+													</li>
+													{% endif %}
+												</ul>
+											</div>
+											<!-- End Images slider -->
+										</div>
+										<!-- End Product slider -->
+									</div>
+									<div class="col-lg-6 col-12">
+										<div class="product-des">
+											<!-- Description -->
+											<div class="short">
+												<h4>{{product.name}}</h4>
+												<p class="price"><span class="discount">Rs.{{product.price}}.00</span>{% if product.price_without_discount %}<s>Rs.{{product.price_without_discount}}.00</s>{% endif %}</p>
+												<p class="description"></p>
+											</div>
+											<!--/ End Description -->
+											
+											<!-- Product Buy -->
+											<div class="product-buy">
+												{% if product.id not in product_ids_list %}
+												<form id="quantity-form" method="POST" action="{% url 'add_to_cart_product_redirect' id=product.id %}">
+												{% csrf_token %}
+												<div class="quantity">
+													<h6>Quantity :</h6>
+													<div class="input-group">
+														<div class="button minus">
+															<button type="button" class="btn btn-primary btn-number" data-type="minus" data-field="quantity">
+																<i class="ti-minus"></i>
+															</button>
+														</div>
+														<input type="text" name="quantity" class="input-number" data-min="1" data-max="10" value="1">
+														<div class="button plus">
+															<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quantity">
+																<i class="ti-plus"></i>
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button type="submit" class="btn">Add to cart</button>
+												</div>
+												</form>
+												{% else %}
+												<form id="quantity-form" method="POST" action="{% url 'update_cart' id=product.id %}">
+												{% csrf_token %}
+												<div class="quantity">
+													<h6>Quantity :</h6>
+													<div class="input-group">
+														<div class="button minus">
+															<button type="button" class="btn btn-primary btn-number" data-type="minus" data-field="quantity">
+																<i class="ti-minus"></i>
+															</button>
+														</div>
+														<input type="text" name="quantity" class="input-number" data-min="1" data-max="10" value="1">
+														<div class="button plus">
+															<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quantity">
+																<i class="ti-plus"></i>
+															</button>
+														</div>
+													</div>
+												</div>
+												<div class="add-to-cart">
+													<button type="submit" class="btn">Update</button>
+													<a href="{% url 'remove_from_cart_product_redirect' id=product.id %}" class="btn">Remove</a>
+												</div>
+												</form>
+												{% endif %}
+												<p class="cat">Category :<a href="#">Clothing</a></p>
+												<p class="availability"></p>
+											</div>
+											<!--/ End Product Buy -->
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<div class="product-info">
+											<div class="nav-main">
+												<!-- Tab Nav -->
+												<ul class="nav nav-tabs" id="myTab" role="tablist">
+													<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a></li>
+													<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a></li>
+												</ul>
+												<!--/ End Tab Nav -->
+											</div>
+											<div class="tab-content" id="myTabContent">
+												<!-- Description Tab -->
+												<div class="tab-pane fade show active" id="description" role="tabpanel">
+													<div class="tab-single">
+														<div class="row">
+															<div class="col-12">
+																<div class="single-des">
+																	<p></p>
+																</div>
+																<div class="single-des">
+																	<p></p>
+																</div>
+																<div class="single-des">
+																	<h4>Product Features:</h4>
+																	<ul>
+																		{% for description in description_list %}
+																		<li>{{description}}</li>
+																		{% endfor %}
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!--/ End Description Tab -->
+												<!-- Reviews Tab -->
+												<div class="tab-pane fade" id="reviews" role="tabpanel">
+													<div class="tab-single review-panel">
+														<div class="row">
+															<div class="col-12">
+																<div class="ratting-main">
+																	<div class="avg-ratting">
+																		{% if average_rating %}
+																		<h4>{{average_rating}} <span>(Overall)</span></h4>
+																		<span>Based on {{rating_count}} Comments</span>
+																		{% else %}
+																		<h4>0 <span>(Overall)</span></h4>
+																		<span>Based on 0 Comments</span>
+																		{% endif %}
+																	</div>
+																	<!-- Single Rating -->
+																	{% if review_instance %}
+																	{% for r in review_instance %}
+																	<div class="single-rating">
+																		<div class="rating-author">
+																			<img src="{% static 'images/review_image.jpg' %}" alt="#">
+																		</div>
+																		<div class="rating-des">
+																			<h6>{{r.name}}</h6>
+																			<div class="ratings">
+																				<ul class="rating">
+																					{% if r.rating in one %}
+																					<li><i class="fa fa-star"></i></li>
+																					{% elif r.rating in two %}
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					{% elif r.rating in three %}
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					{% elif r.rating in four %}
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					{% elif r.rating in five %}
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					<li><i class="fa fa-star"></i></li>
+																					{% endif %}
+																				</ul>
+																				<div class="rate-count">(<span>{{r.rating}}.0</span>)</div>
+																			</div>
+																			<p>{{r.review}}</p>
+																		</div>
+																	</div>
+																	{% endfor %}
+																	{% endif %}
+																	<!--/ End Single Rating -->
+																</div>
+																<!-- Review -->
+																<div class="comment-review">
+																	<div class="add-review">
+																		<h5>Add A Review</h5>
+																		<p>Your email address will not be published. Required fields are marked</p>
+																	</div>
+																</div>
+																<!--/ End Review -->
+																<!-- Form -->
+																<form class="form" method="post">
+																	{% csrf_token %}
+																	<div class="row">
+																		<div class="col-lg-6 col-12">
+																			<!-- <div class="form-group"> -->
+																				<label>Your Rating<span>*</span></label><br>
+																				<div class="star-rating">
+																					<input type="radio" id="5-stars" name="rating" value="5">
+																					<label for="5-stars">&#9733;</label>
+																					<input type="radio" id="4-stars" name="rating" value="4">
+																					<label for="4-stars">&#9733;</label>
+																					<input type="radio" id="3-stars" name="rating" value="3">
+																					<label for="3-stars">&#9733;</label>
+																					<input type="radio" id="2-stars" name="rating" value="2">
+																					<label for="2-stars">&#9733;</label>
+																					<input type="radio" id="1-stars" name="rating" value="1">
+																					<label for="1-stars">&#9733;</label>
+																				</div>
+																			<!-- </div> -->
+																		</div>
+																		<div class="col-lg-6 col-12">
+																			<div class="form-group">
+																			</div>
+																		</div>
+																		<div class="col-lg-6 col-12">
+																			<div class="form-group">
+																				<label>Your Name<span>*</span></label>
+																				<input type="text" name="name" required="required" placeholder="">
+																			</div>
+																		</div>
+																		<div class="col-lg-6 col-12">
+																			<div class="form-group">
+																				<label>Your Email<span>*</span></label>
+																				<input type="email" name="email" required="required" placeholder="">
+																			</div>
+																		</div>
+																		<div class="col-lg-12 col-12">
+																			<div class="form-group">
+																				<label>Write a review<span>*</span></label>
+																				<textarea name="message" rows="6" placeholder="" ></textarea>
+																			</div>
+																		</div>
+																		<div class="col-lg-12 col-12">
+																			<div class="form-group button5">	
+																				<button type="submit" class="btn">Submit</button>
+																			</div>
+																		</div>
+																	</div>
+																</form>
+																<!--/ End Form -->
+															</div>
+														</div>
+													</div>
+												</div>
+												<!--/ End Reviews Tab -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		</section>
+		<!--/ End Shop Single -->
+		
+	<!-- Start Most Popular -->
+	
+	<!-- End Most Popular Area -->
+	
+	
+				
+	<!-- Start Footer Area -->
+	<footer class="footer">
+		<!-- Footer Top -->
+		<div class="footer-top section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer about">
+							<div class="logo">
+								<a href="{% url 'index' %}"><h1>Iconic Store</h1></a>
+							</div>
+							<p class="text"> At IconicStore, we believe that fashion is not just about what you wear, but how you feel.</p>
+							<p class="call">Got Question? WhatsApp us 24/7<span><a href="https://wa.me/923704651911" target="_blank">+92 370 4651911</a></span></p>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer links">
+							<h4>Information</h4>
+							<ul>
+								<li><a href="{% url 'about' %}">About Us</a></li>
+								<li><a href="mailto:iconicsj.01@gmail.com" target="_blank">Mail Us</a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer links">
+							<h4>Customer Service</h4>
+							<ul>
+								<!-- <li><a href="#">Returns</a></li>
+								<li><a href="#">Shipping</a></li>
+								<li><a href="#">Privacy Policy</a></li> -->
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer social">
+							<h4>Get In Tuch</h4>
+							<!-- Single Widget -->
+							<div class="contact">
+								<ul>
+									<li>IconicStore Center Block-A Sher Shah Lahore.</li>
+									<li>Punjab Pakistan</li>
+									<li>iconicsj.01@gmail.com</li>
+									<li>+92 370 4651911</li>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+							<ul>
+								<!-- <li><a href="#"><i class="ti-facebook"></i></a></li>
+								<li><a href="#"><i class="ti-twitter"></i></a></li>
+								<li><a href="#"><i class="ti-flickr"></i></a></li>
+								<li><a href="#"><i class="ti-instagram"></i></a></li> -->
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Top -->
+		<div class="copyright">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+						<div class="col-lg-6 col-12">
+							<div class="left">
+								<p>&copy; <span id="displayYear"></span> <a href="{% url 'index' %}">Iconic Store</a>  -  All Rights Reserved.</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-12">
+							<div class="right">
+								<img src="{% static 'images/payments.png' %}" alt="#">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- /End Footer Area -->
+	
+    <!-- Jquery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<!-- Popper JS -->
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Color JS -->
+	<script src="{% static 'js/colors.js' %}"></script>
+	<!-- Slicknav JS -->
+	<script src="{% static 'js/slicknav.min.js' %}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{% static 'js/owl-carousel.js' %}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{% static 'js/magnific-popup.js' %}"></script>
+	<!-- Fancybox JS -->
+	<script src="{% static 'js/facnybox.min.js' %}"></script>
+	<!-- Waypoints JS -->
+	<script src="{% static 'js/waypoints.min.js' %}"></script>
+	<!-- Countdown JS -->
+	<script src="{% static 'js/finalcountdown.min.js' %}"></script>
+	<!-- Nice Select JS -->
+	<script src="{% static 'js/nicesellect.js' %}"></script>
+	<!-- Ytplayer JS -->
+	<script src="{% static 'js/ytplayer.min.js' %}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{% static 'js/flex-slider.js' %}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{% static 'js/scrollup.js' %}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{% static 'js/onepage-nav.min.js' %}"></script>
+	<!-- Easing JS -->
+	<script src="{% static 'js/easing.js' %}"></script>
+	<!-- Active JS -->
+	<script src="{% static 'js/active.js' %}"></script>
+  	<!-- Same Page JS -->
+	<script src="{% static 'js/same_locaion_page.js' %}"></script>
+
+  
+
+  
+
+  <script>
+    function submitForm() {
+      document.getElementById('categoryForm').submit();
+    }
+  </script>
+</body>
+</html>
