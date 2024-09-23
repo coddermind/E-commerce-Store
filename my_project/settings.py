@@ -141,14 +141,15 @@ LOGIN_REDIRECT_URL="index"
 LOGOUT_URL= "logout_user"
 LOGOUT_REDIRECT_URL="login_user"
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY="368160349960-bld0r6tdatap82u4akt0uncr8al5js5k.apps.googleusercontent.com"
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET="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"
+# this is for continiue with google functionality and these social oauth keys can be created on google developer console
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY="your google oauth key"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET="google oauth client secret"
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  # Typically 587 for TLS or 465 for SSL
 EMAIL_USE_TLS = True  # Or EMAIL_USE_SSL = True if your SMTP server requires SSL
-EMAIL_HOST_USER = 'iconicsj.01@gmail.com'
-EMAIL_HOST_PASSWORD = 'tzgo pvas rkac jtkr'
+EMAIL_HOST_USER = 'your email'
+EMAIL_HOST_PASSWORD = 'your app password for email'
 EMAIL_USE_LOCALTIME = True  # Use this if you want to use the local timezone for sending emails
