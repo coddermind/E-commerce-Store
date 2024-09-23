@@ -21,16 +21,13 @@ This is a full-featured e-commerce application built using Python and Django. Th
     cd django-ecommerce-store
     ```
 
-2. Create and activate a virtual environment:
+2. Install the Django:
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    pip install django
     ```
 
-3. Install the dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+3. Go to directory:
+    Go to the directory where manage.py file exists.
 
 4. Apply the migrations:
     ```bash
